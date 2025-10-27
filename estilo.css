@@ -1,0 +1,40 @@
+.logo-slider {
+    overflow: hidden; 
+    padding: 20px 0;
+    width: 100%;
+    --animation-speed: 25s; 
+}
+
+.logo-track {
+    display: flex; 
+    white-space: nowrap; 
+    width: fit-content; 
+    animation: scroll-infinito var(--animation-speed) linear infinite;
+}
+
+.logo-item {
+    margin: 0 40px; /* Espacio entre iconos */
+    display: inline-flex; /* Asegura la alineación */
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Altura del contenedor del icono */
+    font-size: 40px; /* Tamaño del icono */
+    color: #991515; /* Color base del icono */
+    transition: all 0.3s;
+}
+
+/* Estilo para el ícono individual (la etiqueta i) */
+.logo-item i {
+    pointer-events: none; /* Evita interferencia con el evento 'mouseenter' del padre */
+}
+
+/* Pausa la animación al pasar el ratón */
+.logo-track.paused {
+    animation-play-state: paused;
+}
+
+/* Keyframes (Se mantiene igual) */
+@keyframes scroll-infinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
