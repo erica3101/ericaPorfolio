@@ -1,9 +1,10 @@
 :root {
     --primary-color: #16423c;
     --secondary-color: #f4f1de;
+    --primary-version: #0b2e2a;
     --dark-bg-color: #1a1a1a;
     --light-bg-color: #F8F6F1;
-    transition: all 3s ease;
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -18,17 +19,18 @@ html {
 }
 
 
-body{
+body {
     font-family: 'Segoe UI', 'Poppins', Verdana, Tahoma, sans-serif;
-background-color: var(--light-bg-color);
-line-height: 1.6;
-color: var(--dark-bg-color);
+    background-color: var(--light-bg-color);
+    line-height: 1.6;
+    color: var(--dark-bg-color);
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style: none;
 }
@@ -40,42 +42,178 @@ img {
 }
 
 
-header{
-    position: fixed;
+/* Estilos para el header y la navegación */
+header {
+    position: static;
     top: 0;
-    left: 0;    
+    left: 0;
     width: 100%;
     background-color: var(--light-bg-color);
 }
 
-.logo-slider {
-    overflow: hidden; 
-    padding: 20px 0;
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 3rem;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+nav .nav-links a {
+    position: relative;
+    padding: .5rem 0;
+    transition: var(--transition);
+}
+
+nav .nav-links a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+nav .nav-links a:hover:after {
     width: 100%;
-    --animation-speed: 70s; 
+}
+
+/* Estilos para las secciones generales */
+
+.seccion {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    position: relative;
+    text-align: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+}
+
+
+
+
+#sobremi {
+  min-height: 100vh;
+  display: flex;
+ align-items: stretch;
+   gap: 5rem;
+  padding-top: 3rem;
+  padding-inline: 4rem;
+}
+
+/* BLOQUE DE IMAGEN */
+.hero-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 100%;
+  max-height: 450px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* BLOQUE DE TEXTO */
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* centramos los tres elementos */
+  align-items: flex-start;
+  gap: 2.2rem; /* 🔹 menor separación entre h2, p y a */
+  padding: 0;
+}
+
+#sobremi h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+#sobremi p {
+    font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+#sobremi a {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  transform: skew(-10deg);
+}
+
+#sobremi a:hover {
+  background-color: var(--primary-version);
+}
+
+/* Estilos para el slider de logos */
+
+.logo-slider {
+
+    overflow: hidden;
+    padding: 20px 0;
+   width: 100%;
+    --animation-speed: 70s;
 }
 
 .logo-track {
-    display: flex; 
-    white-space: nowrap; 
-    width: fit-content; 
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
     animation: scroll-infinito var(--animation-speed) linear infinite;
 }
 
 .logo-item {
-    margin: 0 40px; /* Espacio entre iconos */
-    display: inline-flex; /* Asegura la alineación */
+    margin: 0 40px;
+    /* Espacio entre iconos */
+    display: inline-flex;
+    /* Asegura la alineación */
     align-items: center;
     justify-content: center;
-    height: 80px; /* Altura del contenedor del icono */
-    font-size: 40px; /* Tamaño del icono */
-    color: var(--primary-color); /* Color base del icono */
+    height: 80px;
+    /* Altura del contenedor del icono */
+    font-size: 40px;
+    /* Tamaño del icono */
+    color: var(--primary-color);
+    /* Color base del icono */
     transition: all 0.3s;
 }
 
 /* Estilo para el ícono individual (la etiqueta i) */
 .logo-item i {
-    pointer-events: none; /* Evita interferencia con el evento 'mouseenter' del padre */
+    pointer-events: none;
+    /* Evita interferencia con el evento 'mouseenter' del padre */
 }
 
 /* Pausa la animación al pasar el ratón */
@@ -85,6 +223,11 @@ header{
 
 /* Keyframes (Se mantiene igual) */
 @keyframes scroll-infinito {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
