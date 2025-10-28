@@ -1,8 +1,58 @@
+:root {
+    --primary-color: #16423c;
+    --secondary-color: #f4f1de;
+    --dark-bg-color: #1a1a1a;
+    --light-bg-color: #F8F6F1;
+    transition: all 3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--primary-color) var(--secondary-color);
+}
+
+
+body{
+    font-family: 'Segoe UI', 'Poppins', Verdana, Tahoma, sans-serif;
+background-color: var(--light-bg-color);
+line-height: 1.6;
+color: var(--dark-bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    background-color: var(--light-bg-color);
+}
+
 .logo-slider {
     overflow: hidden; 
     padding: 20px 0;
     width: 100%;
-    --animation-speed: 25s; 
+    --animation-speed: 70s; 
 }
 
 .logo-track {
@@ -19,7 +69,7 @@
     justify-content: center;
     height: 80px; /* Altura del contenedor del icono */
     font-size: 40px; /* Tamaño del icono */
-    color: #991515; /* Color base del icono */
+    color: var(--primary-color); /* Color base del icono */
     transition: all 0.3s;
 }
 
