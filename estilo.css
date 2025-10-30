@@ -50,38 +50,6 @@ img {
 
 
 
-.hero-content {
-  height: 45vh;
-    text-align: center;
-}
-
-
-.hero-content h1 {
-
-    margin: 0; /* Para eliminar cualquier margen predeterminado que pueda afectar */
-      font-family: 'Slackey', cursive;
-  font-size: 7rem;
-  color: var(--dark-bg-color);
-
-
-  background-image: url('imagenes/mancha.webp'); 
-
-  
-  padding: 80px 0;
-  /* Ajusta cómo se repite la imagen: 'no-repeat' es común para fondos de encabezado */
-  background-repeat: no-repeat; 
-  
-  
-  /* Ajusta el tamaño de la imagen. 'cover' la escala para cubrir el área, 'contain' para que quepa, o usa valores como '100% 100%' */
-  background-size: contain; 
-  
-  /* Ajusta la posición de la imagen. 'center' es un buen punto de partida */
-  background-position: center;
-}
-
-
-
-
 /* Estilos para el header y la navegación */
 
 header {
@@ -272,4 +240,154 @@ nav .nav-links a:hover:after {
     100% {
         transform: translateX(-50%);
     }
+}
+
+
+
+
+
+/* --- Estilos de las Tarjetas (Refinados y con Filtro) --- */
+
+
+/* La imagen del proyecto es la clave aquí */
+.proyecto-card img {
+    width: 100%;
+    height: 60%; 
+    max-height: 250px; 
+    object-fit: cover;
+    
+    /* Efecto Blanco y Negro por defecto (Se aplica globalmente) */
+    filter: grayscale(100%); 
+    transition: filter 0.2s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor sobre la TARJETA (no solo la imagen) */
+.proyecto-card:hover img {
+    filter: grayscale(0%); /* Quita la escala de grises, mostrando la imagen a color */
+}
+
+/* Ajuste específico para el contenido de la tarjeta 2x2 */
+.proyecto-card.span-2x2 img {
+    max-height: 65%; 
+    height: 65%;
+}
+
+/* --- Resto de estilos del diseño en bloque (sin cambios) --- */
+
+/* Contenedor Grid (Optimizado) */
+.proyecto-contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-auto-rows: minmax(200px, auto); 
+}
+
+/* Estilos de la Tarjeta */
+.proyecto-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.proyecto-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+}
+
+/* Contenido de la tarjeta */
+.proyecto-info {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+/* Título del proyecto */
+.proyecto-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+/* Botón "Ver Proyecto" */
+.proyecto-card .btn {
+    display: block;
+    padding: 10px 15px;
+ background-color: var(--secondary-color);
+  color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: var(--transition)
+}
+
+.proyecto-card .btn:hover {
+  background-color: var(--secondary-version);
+  color: var(--dark-bg-color);
+}
+
+/* Clases de Tamaño para el Patrón Asimétrico (Escritorio/Tablet) */
+.proyecto-card.span-2x2 {
+    grid-column: span 2;
+    grid-row: span 2; 
+}
+
+/* --- Media Queries --- */
+
+/* Pantallas Medianas (2 columnas) */
+@media (max-width: 992px) {
+    .proyecto-contenedor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .proyecto-card.span-2x2 {
+        grid-column: span 2; 
+        grid-row: span 2;
+    }
+}
+
+/* Pantallas Pequeñas (1 columna) - Mismo tamaño y sin filtro B&N */
+@media (max-width: 600px) {
+    /* Mismo tamaño (1x1) */
+    .proyecto-contenedor-grid {
+        grid-template-columns: 1fr;
+    }
+    .proyecto-card.span-2x2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* Sin filtro B&N */
+    .proyecto-card img {
+        filter: grayscale(0%); 
+    }
+    .proyecto-card:hover img {
+        filter: grayscale(0%);
+    }
+}
+
+/* --- Sección de Proyectos y Título --- */
+#proyectos {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #e9ecef; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.section-title {
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: #212529;
+    border-bottom: 3px solid #6c757d;
+    display: inline-block;
+    padding-bottom: 5px;
 }
