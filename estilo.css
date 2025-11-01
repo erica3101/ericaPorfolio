@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 
-
-
-
 :root {
     --primary-color: #16423c;
     --secondary-color: #303030;
     --secondary-version: #b0b0b0;
     --dark-bg-color: #1a1a1a;
     --light-bg-color: #F8F6F1;
+    --cielo-color: #e9ecef;
     --transition: all 0.3s ease;
 }
 
@@ -46,9 +44,6 @@ img {
     height: auto;
     display: block;
 }
-
-
-
 
 /* Estilos para el header y la navegación */
 
@@ -112,85 +107,87 @@ nav .nav-links a:hover:after {
 }
 
 .section-title {
-    font-size: 2rem;
     position: relative;
     text-align: flex-start;
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
 }
 
 
-
-
-#sobremi {
-  min-height: 100vh;
-  display: flex;
- align-items: stretch;
-   gap: 5rem;
-  padding-top: 3rem;
-  padding-inline: 4rem;
+#sobremi,
+#detalle-sobremi {
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    gap: 5rem;
+    padding-top: 3rem;
+    padding-inline: 4rem;
 }
 
 /* BLOQUE DE IMAGEN */
 .hero-img {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-img img {
-  width: 100%;
-  max-height: 450px; 
-  object-fit: cover;
-  border-radius: 10px;
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 /* BLOQUE DE TEXTO */
 .sec-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* centramos los tres elementos */
-  align-items: flex-start;
-  gap: 2.3rem; /* 🔹 menor separación entre h2, p y a */
-  padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* centramos los tres elementos */
+    align-items: flex-start;
+    gap: 2.3rem;
+    /* 🔹 menor separación entre h2, p y a */
+    padding: 0;
 }
 
-#sobremi h2 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin: 0;
+/* BLOQUE DE TEXTO */
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
 }
 
-#sobremi p {
+p {
     font-size: 1.3rem;
-  line-height: 1.6;
-  margin: 0;
+    line-height: 1.6;
+    margin: 0;
 }
 
-#sobremi a {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 7px;
-  font-weight: 600;
-  transition: var(--transition);
-  border: none;
-  transform: skew(-10deg);
+#sobremi a,
+#detalle-sobremi a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
 }
 
-#sobremi a:hover {
-  background-color: var(--secondary-version);
-  color: var(--dark-bg-color);
+#sobremi a:hover,
+#detalle-sobremi a:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
 }
 
 br {
-    margin-bottom: 1em; /* Oculta los saltos de línea en pantallas grandes */
+    margin-bottom: 1em;
+    /* Oculta los saltos de línea en pantallas grandes */
 }
-
 
 
 /* Estilos para el slider de logos */
@@ -199,7 +196,7 @@ br {
 
     overflow: hidden;
     padding: 20px 0;
-   width: 100%;
+    width: 100%;
     --animation-speed: 70s;
 }
 
@@ -249,32 +246,31 @@ br {
 }
 
 
-
-
-
 /* --- Estilos de las Tarjetas (Refinados y con Filtro) --- */
 
 
 /* La imagen del proyecto es la clave aquí */
 .proyecto-card img {
     width: 100%;
-    height: 60%; 
-    max-height: 250px; 
+    height: 60%;
+    max-height: 250px;
     object-fit: cover;
-    
-    /*   (Se aplica globalmente) */
-    filter: grayscale(100%); 
-    transition: filter 0.2s ease; /* Transición suave */
+
+    /* (Se aplica globalmente) */
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+    /* Transición suave */
 }
 
 /* Efecto al pasar el cursor sobre la TARJETA (no solo la imagen) */
 .proyecto-card:hover img {
-    filter: grayscale(0%); /* Quita la escala de grises, mostrando la imagen a color */
+    filter: grayscale(0%);
+    /* Quita la escala de grises, mostrando la imagen a color */
 }
 
 /* Ajuste específico para el contenido de la tarjeta 2x2 */
 .proyecto-card.span-2x2 img {
-    max-height: 65%; 
+    max-height: 65%;
     height: 65%;
 }
 
@@ -283,11 +279,11 @@ br {
 /* Contenedor Grid (Optimizado) */
 .proyecto-contenedor-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    grid-auto-rows: minmax(200px, auto); 
+    grid-auto-rows: minmax(200px, auto);
 }
 
 /* Estilos de la Tarjeta */
@@ -304,16 +300,16 @@ br {
 }
 
 .proyecto-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Contenido de la tarjeta */
 .proyecto-info {
     padding: 15px;
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 /* Título del proyecto */
@@ -327,8 +323,8 @@ br {
 .proyecto-card .btn {
     display: block;
     padding: 10px 15px;
- background-color: var(--secondary-color);
-  color: white;
+    background-color: var(--secondary-color);
+    color: white;
     text-decoration: none;
     text-align: center;
     border-radius: 5px;
@@ -338,46 +334,120 @@ br {
 }
 
 .proyecto-card .btn:hover {
-  background-color: var(--secondary-version);
-  color: var(--dark-bg-color);
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
 }
 
 /* Clases de Tamaño para el Patrón Asimétrico (Escritorio/Tablet) */
 .proyecto-card.span-2x2 {
     grid-column: span 2;
-    grid-row: span 2; 
+    grid-row: span 2;
 }
 
 /* --- Media Queries --- */
+/* ======================================= */
+/* === MEDIA QUERIES PARA RESPONSIVE "SOBRE MÍ" === */
+/* Solo se aplican en pantallas de 768px de ancho o menos (Móvil y Tablet Vertical) */
+/* ======================================= */
 
-/* Pantallas Medianas (2 columnas) */
-@media (max-width: 992px) {
-    .proyecto-contenedor-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .proyecto-card.span-2x2 {
-        grid-column: span 2; 
-        grid-row: span 2;
-    }
-}
+@media (max-width: 768px) {
 
-/* Pantallas Pequeñas (1 columna) - Mismo tamaño y sin filtro B&N */
-@media (max-width: 600px) {
-    /* Mismo tamaño (1x1) */
-    .proyecto-contenedor-grid {
+    /* 1. Sección Principal (detalle-sobremi) */
+    /* Cambia el layout de flex (imagen al lado del texto) a un apilamiento vertical */
+    #detalle-sobremi {
+        flex-direction: column;
+        /* Apila los elementos verticalmente */
+        min-height: auto;
+        /* Permite que la altura se ajuste al contenido */
+        gap: 2rem;
+        /* Reduce el espacio entre la imagen y el texto */
+        padding-top: 2rem;
+        padding-inline: 1.5rem;
+        /* Ajusta el padding a los lados para móviles */
+    }
+
+    /* Ajuste de la imagen */
+    .hero-img {
+        /* Se mantiene flex: 1, pero al estar en columna ocupa todo el ancho */
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .hero-img img {
+        max-height: 350px;
+        /* Reduce un poco la altura máxima de la imagen en móvil */
+        object-fit: contain;
+        /* Asegura que la imagen se vea completa */
+    }
+
+    /* Ajuste del contenido de texto */
+    .sec-content {
+        /* Se mantiene flex: 1, pero al estar en columna ocupa todo el ancho */
+        width: 100%;
+        gap: 1.5rem;
+        /* Reduce la separación entre elementos dentro del texto */
+        padding-bottom: 2rem;
+    }
+
+    .section-title {
+        text-align: center;
+        /* Centra el título en móvil */
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.1rem;
+        /* Reduce un poco el tamaño de la fuente para que quepa mejor */
+    }
+
+    /* Contenedor de botones (Email y WhatsApp) */
+    .enlaces-contacto-sobremi {
+        justify-content: center;
+        /* Centra los botones */
+        width: 100%;
+        flex-wrap: wrap;
+        /* Permite que los botones salten de línea si es necesario */
+    }
+
+    /* Ajuste de botones para mejor toque en móvil */
+    .btn-principal,
+    .whatsapp-btn {
+        flex-grow: 1;
+        /* Hace que los botones se expandan para tocar fácilmente */
+        max-width: 200px;
+        text-align: center;
+        transform: none;
+        /* Elimina la inclinación (skew) en móvil para un mejor diseño limpio */
+    }
+
+    /* 2. Sección de Habilidades (habilidades-detalladas) */
+
+    #habilidades-detalladas {
+        padding: 3rem 1.5rem;
+        /* Reduce el padding para móvil */
+    }
+
+    .habilidades-lista-simple-container {
+        /* Al usar auto-fit y minmax, el grid ya se adapta a 1 columna automáticamente
+           cuando el espacio es menor a 300px, pero podemos asegurar el apilamiento
+           y reducir el gap para móviles. */
         grid-template-columns: 1fr;
-    }
-    .proyecto-card.span-2x2 {
-        grid-column: span 1;
-        grid-row: span 1;
+        /* Fuerza a una sola columna */
+        gap: 20px;
+        padding: 0;
     }
 
-    /* Sin filtro B&N */
-    .proyecto-card img {
-        filter: grayscale(0%); 
+    .bloque-titulo {
+        font-size: 1.2rem;
     }
-    .proyecto-card:hover img {
-        filter: grayscale(0%);
+
+    .lista-herramientas li {
+        font-size: 1rem;
+    }
+
+    .divisor-seccion {
+        margin: 2rem auto;
+        /* Reduce el margen del divisor */
     }
 }
 
@@ -385,7 +455,367 @@ br {
 #proyectos {
     padding: 80px 20px;
     text-align: center;
-    background-color: #e9ecef; 
+    background-color: #e9ecef;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
+/* Pagina sobre mi */
+
+
+/* --- Estilos para Redes Sociales dentro de la Introducción --- */
+/* ======================================= */
+/* === ESTILOS ESPECÍFICOS PARA SOBRE MÍ (Detalle) === */
+/* ======================================= */
+
+/* --- Ayudas Generales --- */
+.centrado {
+    text-align: center;
+}
+
+.background-claro {
+    background-color: #f5f5f5;
+    /* Un tono ligeramente diferente para contrastar con el fondo del body */
+}
+
+.divisor-seccion {
+    border: 0;
+    height: 1px;
+    background-color: var(--secondary-version);
+    max-width: 800px;
+    margin: 4rem auto;
+}
+
+
+/* 1. Sección Principal (Estilo Side-by-Side del Index) */
+
+
+/* Reutilizando la estructura de la imagen del index */
+
+
+/* #detalle-sobremi {
+	font-size: 2rem;
+	color: var(--primary-color);
+	margin-bottom: 0.5rem;
+} */
+
+.sub-seccion-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--secondary-version);
+    padding-bottom: 5px;
+}
+
+
+/* --- Estilos de Botones de Contacto --- */
+
+.enlaces-contacto-sobremi {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
+}
+
+.btn-principal:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+
+/* --- Estilos para Redes Sociales dentro de la Introducción (NUEVO) --- */
+
+.redes-sociales-intro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--secondary-version);
+}
+
+.redes-sociales-intro p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.redes-sociales-intro a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    color: white;
+    background-color: var(--secondary-color);
+    transform: none;
+}
+
+.redes-sociales-intro a:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+.redes-sociales-intro a i {
+    font-size: 1em;
+}
+
+
+/* 2. Sección de Habilidades Detalladas (LISTA SIMPLE - SIN TARJETAS) */
+
+.habilidades-lista-simple-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.habilidad-lista-bloque {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid var(--primary-color);
+}
+
+.bloque-titulo {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--secondary-version);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.bloque-titulo i {
+    margin-right: 10px;
+}
+
+.lista-herramientas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-herramientas li {
+    font-size: 1.05rem;
+    color: var(--dark-bg-color);
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.lista-herramientas li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.8em;
+    line-height: 0.5;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ======================================= */
+/* === NUEVOS ESTILOS PARA SECCIÓN REDES SOCIALES (ACTUALIZADO) === */
+/* ======================================= */
+
+#redes-seccion {
+    background-color: var(--cielo-color);
+    /* Fondo con el color secondary */
+    color: white;
+    /* Texto claro para el fondo oscuro */
+    padding: 3rem 5%;
+}
+
+#redes-seccion .seccion-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.redes-iconos {
+    display: flex;
+    flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center;
+    gap: 1.5rem;
+    /* Espacio entre los botones */
+    margin-top: 1rem;
+}
+
+.redes-iconos a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--dark-bg-color); /* Fondo de los botones */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg); /* Misma inclinación que los otros botones */
+    text-decoration: none; /* Asegurar que no hay subrayado */
+    font-size: 1.1rem; /* Ajustar tamaño de fuente */
+}
+
+.redes-iconos a:hover {
+    background-color: var(--secondary-version);
+    /* Color de hover */
+    color: var(--dark-bg-color); /* Texto oscuro en hover */
+    transform: skew(-10deg) translateY(-3px); /* Pequeño efecto al pasar el ratón */
+}
+
+.redes-iconos a i {
+    font-size: 1.2em; /* Iconos un poco más grandes */
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 600px) {
+    #redes-seccion {
+        padding: 2rem 1.5rem;
+    }
+
+    #redes-seccion h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .redes-iconos a {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+        gap: 6px;
+        transform: none; /* Eliminar inclinación en móviles si se prefiere un diseño más limpio */
+    }
+
+    .redes-iconos a:hover {
+        transform: none; /* También para el hover en móvil */
+    }
+}
+
+
+
+
+
+
+
+/* ======================================= */
+/* === ESTILOS PARA EL FOOTER (VERSIÓN ALINEADA A LA IZQUIERDA) === */
+/* ======================================= */
+
+#footer-compacto {
+    /* Mantenemos la base compacta y clara */
+    background-color: var(--primary-color); 
+    color: var(--dark-bg-color);
+    padding: 1rem 5% 1.5rem 5%; 
+    border-top: 1px solid var(--secondary-version); 
+}
+
+.footer-contenido-alineado {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex; /* Habilitamos Flexbox para alinear logo e info */
+    justify-content: space-between; /* El logo a la izquierda, la info a la derecha */
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Logo a la izquierda */
+.footer-col-logo img {
+    height: 3rem; /* Tamaño similar al del header */
+    display: block;
+}
+
+/* Columna de Información (Enlaces + Redes) */
+.footer-col-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Navegación central - Se mantiene, pero ahora alineada en el `col-info` */
+.footer-nav-compacto {
+    display: flex;
+    gap: 1rem; 
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+/* Redes Sociales - Se mantiene igual */
+.footer-redes-compacto {
+    display: flex;
+    gap: 0.8rem;
+}
+/* ... (el resto de estilos de .footer-nav-compacto a:hover, .separador, .footer-redes-compacto, etc., se mantienen iguales) ... */
+
+
+/* Copyright (Lo centramos debajo de la línea) */
+.footer-copy-compacto {
+    text-align: center; /* Aseguramos que el copyright siempre esté centrado */
+    font-size: 0.75rem; 
+    color: var(--secondary-version);
+    margin-top: 1rem;
+}
+
+
+/* --- Media Query para Footer (Móviles) --- */
+@media (max-width: 768px) {
+    .footer-contenido-alineado {
+        flex-direction: column; /* Apilamos en vertical */
+        gap: 1.5rem;
+    }
+
+    .footer-col-info {
+        flex-direction: column; /* Apilamos enlaces y redes */
+        gap: 1rem;
+    }
+
+    .footer-nav-compacto {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+}
