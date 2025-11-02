@@ -64,7 +64,7 @@ header {
     margin: 0 auto;
 }
 
-.logo img {
+.logo img{
     height: 3rem;
 }
 
@@ -424,6 +424,8 @@ br {
 
     #habilidades-detalladas {
         padding: 3rem 1.5rem;
+/*         padding: 0rem 0rem; */
+
         /* Reduce el padding para móvil */
     }
 
@@ -474,16 +476,17 @@ br {
 }
 
 .background-claro {
-    background-color: #f5f5f5;
+    background-color: var(--cielo-color);
     /* Un tono ligeramente diferente para contrastar con el fondo del body */
 }
 
 .divisor-seccion {
     border: 0;
     height: 1px;
-    background-color: var(--secondary-version);
-    max-width: 800px;
-    margin: 4rem auto;
+    background-color: var(--primary-color);
+    max-width: 40rem;
+    margin: 1rem auto;
+    opacity: 0.6;
 }
 
 
@@ -622,12 +625,16 @@ br {
     border-bottom: 1px solid var(--secondary-version);
     padding-bottom: 10px;
     font-weight: 600;
+
+    display: flex; 
+    align-items: flex-start; 
 }
 
 .bloque-titulo i {
     margin-right: 10px;
-}
-
+    margin-top: 0.5rem;
+     }
+ 
 .lista-herramientas {
     list-style: none;
     padding: 0;
@@ -648,11 +655,11 @@ br {
     content: "•";
     color: var(--primary-color);
     font-size: 1.8em;
-    line-height: 0.5;
+    line-height: 0.6;
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.1rem;
+    transform: none;
 }
 
 /* ======================================= */
@@ -660,11 +667,11 @@ br {
 /* ======================================= */
 
 #redes-seccion {
-    background-color: var(--cielo-color);
+    background-color: var(--light-bg-color);
     /* Fondo con el color secondary */
     color: white;
     /* Texto claro para el fondo oscuro */
-    padding: 3rem 5%;
+padding: 8.5rem 5% ;
 }
 
 #redes-seccion .seccion-contenido {
@@ -682,8 +689,7 @@ br {
     flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
     justify-content: center;
     gap: 1.5rem;
-    /* Espacio entre los botones */
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .redes-iconos a {
@@ -750,25 +756,31 @@ br {
     /* Mantenemos la base compacta y clara */
     background-color: var(--primary-color); 
     color: var(--dark-bg-color);
-    padding: 1rem 5% 1.5rem 5%; 
+    padding: 2rem 0 1.5rem 0; 
     border-top: 1px solid var(--secondary-version); 
 }
 
+
+
+
+
 .footer-contenido-alineado {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex; /* Habilitamos Flexbox para alinear logo e info */
-    justify-content: space-between; /* El logo a la izquierda, la info a la derecha */
+    /* Replicamos la configuración central del #navbar */
+    max-width: 1400px; /* Igual al límite de tu nav */
+    margin: 0 auto; /* Centra todo el contenido */
+    padding: 0 2%; /* <-- ESTO ALINEA EL LOGO AL BORDE DEL CONTENIDO DEL NAV */
+    
+    /* Propiedades de Flexbox */
+    display: flex; 
+    justify-content: space-between; 
     align-items: center;
+    
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Logo a la izquierda */
-.footer-col-logo img {
-    height: 3rem; /* Tamaño similar al del header */
-    display: block;
-}
+
 
 /* Columna de Información (Enlaces + Redes) */
 .footer-col-info {
@@ -794,12 +806,25 @@ br {
 
 
 /* Copyright (Lo centramos debajo de la línea) */
-.footer-copy-compacto {
+.footer-copy-compacto p {
     text-align: center; /* Aseguramos que el copyright siempre esté centrado */
     font-size: 0.75rem; 
     color: var(--secondary-version);
     margin-top: 1rem;
 }
+/* Redes Sociales - Iconos más claros */
+.footer-redes-compacto a {
+    font-size: 1.1rem;
+    /* CAMBIO CLAVE: Usamos el color gris claro */
+    color: var(--light-bg-color); 
+    transition: color 0.3s ease;  
+}
+
+/* Mantenemos el hover en el color principal */
+.footer-redes-compacto a:hover {
+    color: var(--secondary-version);
+}
+
 
 
 /* --- Media Query para Footer (Móviles) --- */
