@@ -907,3 +907,177 @@ br {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================= */
+/* === ESTILOS PARA EL MODAL (VENTANA EMERGENTE) === */
+/* ======================================= */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Bloquea el scroll del body cuando el modal está abierto */
+body.modal-abierto {
+    overflow: hidden;
+}
+
+.modal-contenido {
+    background-color: var(--light-bg-color);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-modal {
+    color: var(--dark-bg-color);
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-contenido h3 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-version);
+    padding-bottom: 10px;
+}
+
+/* Cuerpo del Modal (Flexbox para la disposición Imagen + Texto) */
+.modal-cuerpo {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.modal-cuerpo img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-descripcion-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-descripcion-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos de las insignias de tecnología */
+#modal-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.badge-tecnologia {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Botones dentro del modal */
+.modal-descripcion-container .btn {
+    display: inline-block;
+    width: fit-content;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    transform: none; /* Quitar el skew */
+}
+
+.modal-descripcion-container .btn-secundario {
+    background-color: #333; /* Color oscuro para Behance/Github */
+    color: white;
+}
+
+.modal-descripcion-container .btn-secundario:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Media Query para Móviles: Modal en una columna */
+@media (max-width: 768px) {
+    .modal-cuerpo {
+        flex-direction: column;
+    }
+
+    .modal-cuerpo img {
+        max-width: 100%;
+    }
+
+    .modal-contenido h3 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

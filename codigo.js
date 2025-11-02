@@ -27,3 +27,177 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+
+
+
+/* ======================================= */
+/* Proyectos.html */
+
+// Array de Proyectos
+// Esta es la fuente única de información. Aquí es donde agregas, eliminas o modificas proyectos.
+const listaDeProyectos = [
+    {
+        id: 1,
+        titulo: "Web Casa Surf",
+        descripcionCorta: "Diseño y desarrollo de un sitio web moderno y responsivo.",
+        descripcionLarga: "Proyecto de diseño y desarrollo web completo para una escuela de surf. Se enfocó en una experiencia de usuario inmersiva, utilizando HTML, CSS (Grid/Flexbox) y un poco de JavaScript para la interactividad.",
+        imagenURL: "imagenes/surf.webp",
+        linkSitio: "https://ejemplo.com/casasurf", // Reemplazar con el enlace real
+        linkBehance: "https://behance.net/tu_proyecto_surf", // Opcional
+        tecnologias: ["HTML5", "CSS3", "JavaScript", "Figma", "Responsive Design"],
+        claseCSS: "span-2x2" // Para que ocupe más espacio en el grid
+    },
+    {
+        id: 2,
+        titulo: "Revista Digital",
+        descripcionCorta: "Diseño de maquetación y arte final para revista temática.",
+        descripcionLarga: "Proyecto editorial, incluyendo el diseño de la portada, contraportada y maquetación de interiores, respetando una grilla modular y tipografía legible.",
+        imagenURL: "imagenes/revista.webp",
+        linkSitio: "#",
+        linkBehance: "https://behance.net/tu_proyecto_revista",
+        tecnologias: ["Adobe InDesign", "Adobe Photoshop", "Maquetación"],
+        claseCSS: ""
+    },
+    {
+        id: 3,
+        titulo: "Estudio de Abogados",
+        descripcionCorta: "Rediseño de la identidad visual y sitio web corporativo.",
+        descripcionLarga: "Rediseño completo del sitio web de un estudio jurídico. El objetivo fue proyectar seriedad y confianza, mejorando la navegación y la llamada a la acción para solicitar consultas.",
+        imagenURL: "imagenes/abogados.webp",
+        linkSitio: "https://ejemplo.com/abogados",
+        linkBehance: "", // Sin Behance
+        tecnologias: ["Figma", "Wireframing", "UI/UX Design"],
+        claseCSS: ""
+    },
+    {
+        id: 4,
+        titulo: "Afiche Publicitario",
+        descripcionCorta: "Creación de pieza gráfica promocional para evento cultural.",
+        descripcionLarga: "Diseño de un afiche promocional para un festival de cine independiente. Se buscó un estilo visual que capturara la esencia del evento, utilizando técnicas de composición y tipografía.",
+        imagenURL: "imagenes/afiche.webp",
+        linkSitio: "#",
+        linkBehance: "https://behance.net/tu_proyecto_afiche",
+        tecnologias: ["Adobe Illustrator", "Tipografía", "Composición"],
+        claseCSS: ""
+    },
+    {
+        id: 5,
+        titulo: "Web Club Padel",
+        descripcionCorta: "Landing page para reserva de canchas de pádel.",
+        descripcionLarga: "Diseño de una landing page enfocada en la conversión para un club de pádel. Se implementó un sistema de reservas simplificado y una galería de fotos.",
+        imagenURL: "imagenes/padel.webp",
+        linkSitio: "https://ejemplo.com/padel",
+        linkBehance: "",
+        tecnologias: ["HTML", "CSS", "Bootstrap", "Diseño Minimalista"],
+        claseCSS: ""
+    },
+    {
+        id: 6,
+        titulo: "Tapa de Libro",
+        descripcionCorta: "Diseño de arte para la portada de una novela gráfica (cómic).",
+        descripcionLarga: "Ilustración y diseño de la tapa de un libro de cómic/novela gráfica. El desafío fue sintetizar el tema principal de la obra en una imagen de alto impacto visual.",
+        imagenURL: "imagenes/comic.webp",
+        linkSitio: "#",
+        linkBehance: "https://behance.net/tu_proyecto_comic",
+        tecnologias: ["Adobe Photoshop", "Ilustración Digital", "Diseño Editorial"],
+        claseCSS: ""
+    },
+    // **********************************************
+    // AÑADE MÁS PROYECTOS AQUÍ SIGUIENDO EL MISMO FORMATO
+    // **********************************************
+];
+
+// ----------------------------------------------------
+// Lógica de Renderizado y Modal
+// ----------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gridContainer = document.getElementById('proyectos-grid');
+    const modal = document.getElementById('modal-proyecto');
+    const cerrarModalBtn = document.querySelector('.cerrar-modal');
+    
+    // Función para renderizar una tarjeta de proyecto
+    const crearTarjetaProyecto = (proyecto) => {
+        const card = document.createElement('div');
+        card.className = `proyecto-card ${proyecto.claseCSS}`;
+        card.setAttribute('data-id', proyecto.id); // Identificador para JS
+
+        card.innerHTML = `
+            <img src="${proyecto.imagenURL}" alt="${proyecto.titulo}">
+            <div class="proyecto-info">
+                <h3>${proyecto.titulo}</h3>
+                <p>${proyecto.descripcionCorta}</p>
+                <a href="#" class="btn ver-proyecto">Ver Proyecto</a>
+            </div>
+        `;
+        
+        // Añadir el evento para abrir el modal
+        card.querySelector('.ver-proyecto').addEventListener('click', (e) => {
+            e.preventDefault();
+            mostrarDetalleProyecto(proyecto.id);
+        });
+
+        return card;
+    };
+
+    // Función para llenar la cuadrícula con los proyectos
+    const inicializarProyectos = () => {
+        gridContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+        listaDeProyectos.forEach(proyecto => {
+            const tarjeta = crearTarjetaProyecto(proyecto);
+            gridContainer.appendChild(tarjeta);
+        });
+    };
+
+    // Función para mostrar el detalle en el modal
+    const mostrarDetalleProyecto = (id) => {
+        const proyecto = listaDeProyectos.find(p => p.id === id);
+        
+        if (!proyecto) return;
+
+        // Llenar el contenido del modal
+        document.getElementById('modal-titulo').textContent = proyecto.titulo;
+        document.getElementById('modal-imagen').src = proyecto.imagenURL;
+        document.getElementById('modal-imagen').alt = proyecto.titulo;
+        document.getElementById('modal-descripcion').textContent = proyecto.descripcionLarga;
+
+        // Llenar Tecnologías
+        const tecnologiasContainer = document.getElementById('modal-tecnologias');
+        tecnologiasContainer.innerHTML = '';
+        proyecto.tecnologias.forEach(tec => {
+            const span = document.createElement('span');
+            span.className = 'badge-tecnologia';
+            span.textContent = tec;
+            tecnologiasContainer.appendChild(span);
+        });
+
+        // Configurar botones de enlace
+        const linkSitio = document.getElementById('modal-link');
+        linkSitio.href = proyecto.linkSitio;
+        linkSitio.style.display = proyecto.linkSitio && proyecto.linkSitio !== "#" ? 'block' : 'none';
+
+        const linkBehance = document.getElementById('modal-behance');
+        linkBehance.href = proyecto.linkBehance;
+        linkBehance.style.display = proyecto.linkBehance ? 'block' : 'none';
+        
+        // Mostrar el modal
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-abierto'); // Bloquear el scroll del body
+    };
+
+    // Eventos para cerrar el modal
+    cerrarModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-abierto');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-abierto');
+        }
+    });
+
+    // Iniciar la carga de proyectos
+    inicializarProyectos();
+});
