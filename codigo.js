@@ -201,3 +201,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar la carga de proyectos
     inicializarProyectos();
 });
+
+
+
+
+
+
+// ... (Todo el código de slider y la lógica de Proyectos se mantiene igual aquí) ...
+// ... (Hasta el cierre de la función DOMContentLoaded para proyectos) ...
+
+
+/* ======================================= */
+/* Formulario de Contacto (CÓDIGO MODIFICADO) */
+/* ======================================= */
+
+// Obtenemos la referencia al formulario de contacto
+const formularioUsuario = document.querySelector("#form-usuario");
+
+// --- FUNCIONES DE VALIDACIÓN ---
+
+// Función utilitaria para mostrar errores.
+const mostrarError = (mensajeError, idCampo) => {
+    // Busca el elemento con el ID de error (ej: 'error-nombre', 'error-email')
+    const campoError = document.getElementById(`error-${idCampo}`);
+    if(campoError) {
+        campoError.textContent = mensajeError;
+    }
+};
+
+function validarNombre() {
+    const input = document.getElementById('nombre');
+    const ok = input.value.trim().length >= 2;
+    mostrarError(ok ? '' : 'El nombre es obligatorio (mín. 2).', 'nombre');
+    return ok;
+}
+
+function validarEmail() {
+    const input = document.getElementById('email');
+    // Expresión regular para email
+    const ok = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(input.value.trim()); 
+    mostrarError(ok ? '' : 'Ingresá un email válido.', 'email');
+    return ok;
+}
+
+function validarFormulario(e) {
+    e.preventDefault(); // 1) Frena el submit nativo
+
+    // Ejecuta *todas* las validaciones
+    const nombreEsValido = validarNombre();
+    const emailEsValido = validarEmail();
+
+    const formularioValido = nombreEsValido && emailEsValido;
+    
+    if (formularioValido) {
+        // 2) Si es válido, envía el formulario
+        formularioUsuario.submit();
+    } 
+}
+
+// --- CONEXIÓN DE EVENTOS ---
+
+// Solo se ejecuta si el formulario existe en el HTML
+if (formularioUsuario) {
+    // Conectamos la función de validación al evento 'submit'
+    formularioUsuario.addEventListener('submit', validarFormulario);
+    
+    // Opcional: Validar al perder el foco (blur) para feedback instantáneo
+    document.getElementById('nombre')?.addEventListener('blur', validarNombre);
+    document.getElementById('email')?.addEventListener('blur', validarEmail);
+}
