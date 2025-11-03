@@ -1034,7 +1034,7 @@ body.modal-abierto {
 .modal-links{
        background-color: var(--secondary-version);
     color: var(--dark-bg-color);
-    padding: 1px 1px;
+    padding: 1px 1px 1px 1px;
     border-radius: 5px;
     font-size: 0.9rem;
 
