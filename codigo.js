@@ -267,6 +267,6 @@ if (formularioUsuario) {
     formularioUsuario.addEventListener('submit', validarFormulario);
     
     // Opcional: Validar al perder el foco (blur) para feedback instantáneo
-    document.getElementById('firstname')?.addEventListener('blur', validarNombre);
+    document.getElementById('nombre')?.addEventListener('blur', validarNombre);
     document.getElementById('email')?.addEventListener('blur', validarEmail);
 }
