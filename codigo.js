@@ -42,7 +42,8 @@ const listaDeProyectos = [
         descripcionCorta: "Diseño y desarrollo de un sitio web moderno.",
         descripcionLarga: "Proyecto de diseño y desarrollo web completo para una escuela de surf. Se enfocó en una experiencia de usuario inmersiva, utilizando HTML, CSS (Grid/Flexbox) y un poco de JavaScript para la interactividad.",
         imagenURL: "imagenes/surf.webp",
-        linkSitio: "https://velvety-starburst-31d093.netlify.app/#tienda", // Reemplazar con el enlace real
+        linkSitio: "https://velvety-starburst-31d093.netlify.app/#tienda",
+        tecnologias: ["HTML", "CSS", "JavaScript"], // Reemplazar con el enlace real
         claseCSS: "span-2x2" // Para que ocupe más espacio en el grid
     },
     {
@@ -82,11 +83,11 @@ const listaDeProyectos = [
         id: 5,
         titulo: "Web Club Padel",
         descripcionCorta: "Landing page para reserva de canchas de pádel.",
-        descripcionLarga: "Diseño de una landing page enfocada en la conversión para un club de pádel. Se implementó un sistema de reservas simplificado y una galería de fotos.",
+        descripcionLarga: "Diseño de una landing page en figma enfocada en la conversión para un club de pádel. Se implementó un sistema de reservas simplificado y una galería de fotos.",
         imagenURL: "imagenes/padel.webp",
         linkSitio: "https://www.figma.com/proto/4uWYDATWQhJJe8E3dhGOMn/Untitled?node-id=1-47&t=XhCEYA8fI2eeKHd6-1",
         linkBehance: "",
-        tecnologias: ["HTML", "CSS", "Bootstrap", "Diseño Minimalista"],
+        tecnologias: ["Adobe Illustrator", "Adobe Photoshop", "Figma", "Diseño Minimalista"],
         claseCSS: ""
     },
     {
@@ -100,9 +101,7 @@ const listaDeProyectos = [
         tecnologias: ["Adobe Photoshop", "Ilustración Digital", "Diseño Editorial"],
         claseCSS: ""
     },
-    // **********************************************
-    // AÑADE MÁS PROYECTOS AQUÍ SIGUIENDO EL MISMO FORMATO
-    // **********************************************
+
 ];
 
 // ----------------------------------------------------

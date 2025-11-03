@@ -1034,10 +1034,10 @@ body.modal-abierto {
 .modal-links {
     background-color: var(--secondary-version);
     color: var(--dark-bg-color);
-    width: 80%;          /* ancho relativo al contenedor */
+    width: 12%;          /* ancho relativo al contenedor */
     max-width: 500px;    /* ancho máximo */
     padding: 20px;       /* espacio interno */
-    margin: 0 auto;      /* centra el modal horizontalmente */
+    /* centra el modal horizontalmente */
     border-radius: 10px; /* opcional: bordes redondeados */
 }
 
