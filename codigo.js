@@ -204,9 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ... (Todo el código de slider y la lógica de Proyectos se mantiene igual aquí) ...
-// ... (Hasta el cierre de la función DOMContentLoaded para proyectos) ...
-
 
 /* ======================================= */
 /* Formulario de Contacto (CÓDIGO MODIFICADO) */
