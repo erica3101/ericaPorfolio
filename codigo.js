@@ -244,7 +244,7 @@ function validarEmail() {
     return ok;
 }
 
-function validarFormulario(e) {
+/* function validarFormulario(e) {
     e.preventDefault(); // 1) Frena el submit nativo
 
     // Ejecuta *todas* las validaciones
@@ -257,6 +257,32 @@ function validarFormulario(e) {
         // 2) Si es válido, envía el formulario
         formularioUsuario.submit();
     } 
+} */
+function validarFormulario(e) {
+    e.preventDefault(); // Frenar submit normal
+
+    const nombreEsValido = validarNombre();
+    const emailEsValido = validarEmail();
+
+    if (!nombreEsValido || !emailEsValido) return;
+
+    // --- ENVÍO A NETLIFY MANUAL ---
+    const formData = new FormData(formularioUsuario);
+
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        const mensajeExito = document.getElementById('mensaje-exito');
+        mensajeExito.textContent = "¡Formulario enviado correctamente! Gracias 😊";
+        mensajeExito.style.display = "block";
+        formularioUsuario.reset();
+    })
+    .catch((error) => {
+        alert("Hubo un error al enviar el formulario: " + error);
+    });
 }
 
 // --- CONEXIÓN DE EVENTOS ---
