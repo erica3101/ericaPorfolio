@@ -270,3 +270,46 @@ if (formularioUsuario) {
     document.getElementById('firstname')?.addEventListener('blur', validarNombre);
     document.getElementById('email')?.addEventListener('blur', validarEmail);
 }
+
+
+
+
+
+
+
+
+
+/* --- Mensaje de éxito personalizado --- */
+document.addEventListener("DOMContentLoaded", () => {
+  const formulario = document.querySelector("#form-usuario");
+  const mensajeExito = document.getElementById("mensaje-exito");
+
+  if (formulario && mensajeExito) {
+    formulario.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const data = new FormData(formulario);
+
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          body: data
+        });
+
+        if (response.ok) {
+          formulario.reset();
+          mensajeExito.style.display = "block";
+
+          // Ocultar mensaje después de 5 segundos
+          setTimeout(() => {
+            mensajeExito.style.display = "none";
+          }, 5000);
+        } else {
+          alert("Hubo un error al enviar el formulario. Intenta nuevamente.");
+        }
+      } catch (error) {
+        alert("Error de conexión. Intenta nuevamente más tarde.");
+      }
+    });
+  }
+});

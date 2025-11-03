@@ -220,19 +220,21 @@ br {
     /* Tamaño del icono */
     color: var(--primary-color);
     /* Color base del icono */
-    transition: all 0.3s;
+    transition: none !important; /* Evita cambios al pasar el fusor */
+    transform: none !important;
+    color: var(--primary-color) !important; /* Mantiene el mismo color */
 }
 
 /* Estilo para el ícono individual (la etiqueta i) */
 .logo-item i {
     pointer-events: none;
+        transform: none !important; /* Sin salto o animación */
+
     /* Evita interferencia con el evento 'mouseenter' del padre */
 }
 
 /* Pausa la animación al pasar el ratón */
-.logo-track.paused {
-    animation-play-state: paused;
-}
+
 
 /* Keyframes (Se mantiene igual) */
 @keyframes scroll-infinito {
@@ -839,10 +841,6 @@ br {
     }
 
     /* 3. SLIDER DE HERRAMIENTAS */
-    .logo-item {
-        margin: 0 20px; /* Reduce el espacio entre iconos */
-        font-size: 30px; /* Reduce el tamaño del icono */
-    }
 
     /* 4. PROYECTOS (Grid a una sola columna) */
     .proyecto-contenedor-grid {
