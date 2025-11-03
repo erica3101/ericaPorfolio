@@ -1025,7 +1025,6 @@ body.modal-abierto {
     gap: 10px;
     margin-bottom: 30px;
     color: var(--dark-bg-color);
-    background-color: var(--cielo-color);
 }
 
 .badge-tecnologia {
@@ -1036,7 +1035,15 @@ body.modal-abierto {
     font-size: 0.9rem;
     font-weight: 500;
 }
+.modal-links{
+       background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
 
+}
 /* Botones dentro del modal */
 .modal-descripcion-container .btn  {
     display: inline-block;
