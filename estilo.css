@@ -1087,6 +1087,7 @@ body.modal-abierto {
         justify-content: center;
     }
 }
+
 @media (max-width: 600px) {
     /* --- General y Tipografía --- */
     .seccion {
@@ -1133,12 +1134,11 @@ body.modal-abierto {
         display: none; 
     }
 
-    /* --- 2. SECCIÓN SOBRE MÍ Y BOTONES PRINCIPALES (Centrado Horizontal) --- */
+    /* --- 2. SECCIÓN SOBRE MÍ Y BOTONES PRINCIPALES (Armonizados) --- */
     #sobremi, #detalle-sobremi {
         flex-direction: column; 
         padding-inline: 1rem;
         gap: 2rem;
-        align-items: center; /* Centra el contenido principal de la sección */
     }
 
     .hero-img {
@@ -1155,24 +1155,25 @@ body.modal-abierto {
         gap: 1.5rem;
     }
     
-    /* Contenedor del botón "Conóceme": Asegura el centrado */
-    #sobremi .contacto {
-        width: 100%; 
-        display: flex;
-        justify-content: center; /* CLAVE para centrar el botón Conóceme */
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Botón "Conóceme": Ajuste de ancho y eliminación de skew */
-    #sobremi .contacto a,
+    /* 🌟 CORRECCIÓN CLAVE: Botón "Conóceme" 🌟 */
+    #sobremi .contacto a, /* Nuevo selector específico para el botón "Conóceme" */
     #detalle-sobremi a {
-        transform: none; 
+        transform: none; /* ELIMINA EL SKEW */
         width: 80%;
         max-width: 300px;
         text-align: center;
+        /* Asegura que herede estilos de botón si los tiene */
         display: block; 
+    }
+    
+    /* Contenedor del botón "Conóceme" */
+    #sobremi .contacto {
+        width: 100%; /* Permite centrar el botón */
+        display: flex;
+        justify-content: center;
+        list-style: none; /* Eliminar cualquier estilo de lista por si acaso */
+        padding: 0;
+        margin: 0;
     }
     
     /* Contenedores de botones secundarios (si existen) */
@@ -1181,7 +1182,6 @@ body.modal-abierto {
         width: 80%;
         max-width: 300px;
         gap: 0.8rem;
-        align-items: center; /* Centra los botones apilados */
     }
 
     .enlaces-contacto-sobremi a {
@@ -1197,20 +1197,36 @@ body.modal-abierto {
         gap: 1rem;
         padding-top: 0.5rem;
     }
-    
+
     /* --- 3. PROYECTOS (Grid a una sola columna y color) --- */
     .proyecto-contenedor-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    /* ... (Estilos de Proyectos sin cambios) ... */
+
+    .proyecto-card.span-2x2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .proyecto-card.span-2x2 img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .proyecto-card img {
+        filter: grayscale(0%) !important;
+    }
 
     /* --- 4. HABILIDADES DETALLADAS --- */
     .habilidades-lista-simple-container {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    /* ... (Estilos de Habilidades sin cambios) ... */
+    
+    .bloque-titulo {
+        font-size: 1.2rem;
+    }
 
 
     /* --- 6. MODAL (Corregido para Armonía de Botones) --- */
@@ -1218,42 +1234,69 @@ body.modal-abierto {
         padding: 20px;
         width: 95%;
     }
-    /* ... (Estilos de Modal sin cambios, ya centrados por ser flex) ... */
-
-
-    /* --- 7. SECCIÓN CONTACTO (Formulario y Botones de Contacto) --- */
-    #contacto {
-        align-items: center;
-        text-align: center;
+    
+    .cerrar-modal {
+        font-size: 30px;
+        top: 5px;
+        right: 15px;
     }
-
-    .contacto-contenido {
-        display: flex;
+    
+    .modal-contenido h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .modal-cuerpo {
         flex-direction: column;
-        align-items: center; /* CLAVE: Centra el formulario y el título */
-        width: 100%;
+        gap: 15px;
     }
 
+    .modal-cuerpo img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .modal-links {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: flex-start; 
+        gap: 10px; 
+        background-color: transparent; 
+        padding: 0; 
+        width: 100%; 
+        max-width: none;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .modal-links .btn {
+        width: auto;
+        display: inline-flex; 
+        justify-content: center;
+        margin-right: 0; 
+        transform: none;
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .modal-descripcion-container p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    #modal-tecnologias {
+        margin-bottom: 15px;
+    }
+
+    /* --- 7. SECCIÓN CONTACTO (Formulario) --- */
     .btn-cta {
         width: 100%; 
         transform: none;
         margin-top: 15px;
     }
     
-    /* 🌟 SOLUCIÓN PARA BOTÓN DE WHATSAPP/CORREO FLOTANTE 🌟 */
-    /* Asumo que estos botones tienen una clase como .boton-flotante o similar */
-    /* Si usan position: fixed/absolute, debemos anular la posición para móviles
-       o asegurar que su padre es la ventana/viewport para centrar correctamente. */
-    
-    /* Si tienes un botón de WhatsApp flotante: */
-    .whatsapp-btn-container, .correo-btn-container {
-        left: 50%;
-        transform: translateX(-50%); /* Centra el contenedor del botón flotante */
-        width: auto; /* O ajusta según sea necesario */
-        bottom: 1rem; /* Ajusta la posición vertical */
-    }
-
-
     /* --- 8. FOOTER COMPACTO --- */
     #footer-compacto {
         padding: 1rem 0 1rem 0;
@@ -1263,19 +1306,13 @@ body.modal-abierto {
         flex-direction: column;
         gap: 1rem; 
         padding: 0 1rem 1rem 1rem;
-        align-items: center; /* Centra el contenido del footer */
     }
 
     .footer-col-info {
         flex-direction: row; 
         gap: 1.5rem;
-        justify-content: center; /* Centra los iconos sociales */
     }
     
-    .footer-copy-compacto p {
-        text-align: center;
-    }
-
     .footer-nav-compacto {
         display: none;
     }
