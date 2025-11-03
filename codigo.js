@@ -39,11 +39,10 @@ const listaDeProyectos = [
     {
         id: 1,
         titulo: "Web Casa Surf",
-        descripcionCorta: "Diseño y desarrollo de un sitio web moderno y responsivo.",
+        descripcionCorta: "Diseño y desarrollo de un sitio web moderno.",
         descripcionLarga: "Proyecto de diseño y desarrollo web completo para una escuela de surf. Se enfocó en una experiencia de usuario inmersiva, utilizando HTML, CSS (Grid/Flexbox) y un poco de JavaScript para la interactividad.",
         imagenURL: "imagenes/surf.webp",
-        linkSitio: "https://ejemplo.com/casasurf", // Reemplazar con el enlace real
-        linkBehance: "https://behance.net/tu_proyecto_surf", // Opcional
+        linkSitio: "https://velvety-starburst-31d093.netlify.app/#tienda", // Reemplazar con el enlace real
         claseCSS: "span-2x2" // Para que ocupe más espacio en el grid
     },
     {
@@ -71,8 +70,8 @@ const listaDeProyectos = [
     {
         id: 4,
         titulo: "Afiche Publicitario",
-        descripcionCorta: "Creación de pieza gráfica promocional para evento cultural.",
-        descripcionLarga: "Diseño de un afiche promocional para un festival de cine independiente. Se buscó un estilo visual que capturara la esencia del evento, utilizando técnicas de composición y tipografía.",
+        descripcionCorta: "Creación de pieza gráfica promocional.",
+        descripcionLarga: "Diseño de un afiche promocional para un festival de música uruguaya. Se buscó un estilo visual que capturara la esencia del evento, utilizando técnicas de composición y tipografía.",
         imagenURL: "imagenes/afiche.webp",
         linkSitio: "#",
         linkBehance: "https://behance.net/tu_proyecto_afiche",
@@ -85,7 +84,7 @@ const listaDeProyectos = [
         descripcionCorta: "Landing page para reserva de canchas de pádel.",
         descripcionLarga: "Diseño de una landing page enfocada en la conversión para un club de pádel. Se implementó un sistema de reservas simplificado y una galería de fotos.",
         imagenURL: "imagenes/padel.webp",
-        linkSitio: "https://ejemplo.com/padel",
+        linkSitio: "https://www.figma.com/proto/4uWYDATWQhJJe8E3dhGOMn/Untitled?node-id=1-47&t=XhCEYA8fI2eeKHd6-1",
         linkBehance: "",
         tecnologias: ["HTML", "CSS", "Bootstrap", "Diseño Minimalista"],
         claseCSS: ""
@@ -93,8 +92,8 @@ const listaDeProyectos = [
     {
         id: 6,
         titulo: "Tapa de Libro",
-        descripcionCorta: "Diseño de arte para la portada de una novela gráfica (cómic).",
-        descripcionLarga: "Ilustración y diseño de la tapa de un libro de cómic/novela gráfica. El desafío fue sintetizar el tema principal de la obra en una imagen de alto impacto visual.",
+        descripcionCorta: "Diseño para la portada de una novela gráfica (cómic).",
+        descripcionLarga: "Ilustración y diseño de la tapa de un libro de cómics y videojuegos.",
         imagenURL: "imagenes/comic.webp",
         linkSitio: "#",
         linkBehance: "https://behance.net/tu_proyecto_comic",
