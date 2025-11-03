@@ -336,3 +336,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal-imagen");
+  const modalImg = document.getElementById("imagen-ampliada");
+  const cerrar = document.querySelector(".cerrar-modal");
+  const imagenes = document.querySelectorAll(".img-porque, .img-encuesta");
+
+  // Función para abrir el modal con la imagen seleccionada
+  function abrirModal(img) {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  }
+
+  // Abrir el modal al hacer click en cualquier imagen
+  imagenes.forEach(img => {
+    img.addEventListener("click", () => abrirModal(img));
+  });
+
+  // Abrir automáticamente el primer elemento al cargar
+  if (imagenes.length > 0) {
+    abrirModal(imagenes[1]);
+  }
+
+  // Cerrar modal
+  cerrar.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+});
