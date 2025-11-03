@@ -1025,8 +1025,12 @@ body.modal-abierto {
     gap: 10px;
     margin-bottom: 30px;
     color: var(--dark-bg-color);
+    background-color: var(--cielo-color);
 }
-
+.modal-links {
+    margin-top: auto; /* Empuja los botones hacia abajo */
+    color: yellow;
+}
 .badge-tecnologia {
     background-color: var(--secondary-version);
     color: var(--dark-bg-color);
