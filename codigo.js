@@ -44,7 +44,6 @@ const listaDeProyectos = [
         imagenURL: "imagenes/surf.webp",
         linkSitio: "https://ejemplo.com/casasurf", // Reemplazar con el enlace real
         linkBehance: "https://behance.net/tu_proyecto_surf", // Opcional
-        tecnologias: ["HTML5", "CSS3", "JavaScript", "Figma", "Responsive Design"],
         claseCSS: "span-2x2" // Para que ocupe más espacio en el grid
     },
     {
@@ -64,9 +63,9 @@ const listaDeProyectos = [
         descripcionCorta: "Rediseño de la identidad visual y sitio web corporativo.",
         descripcionLarga: "Rediseño completo del sitio web de un estudio jurídico. El objetivo fue proyectar seriedad y confianza, mejorando la navegación y la llamada a la acción para solicitar consultas.",
         imagenURL: "imagenes/abogados.webp",
-        linkSitio: "https://ejemplo.com/abogados",
-        linkBehance: "", // Sin Behance
-        tecnologias: ["Figma", "Wireframing", "UI/UX Design"],
+        linkSitio: "https://fluffy-douhua-f397ea.netlify.app/",
+        linkBehance: "", 
+        tecnologias: ["Figma", "html", "UI/UX Design"],
         claseCSS: ""
     },
     {
