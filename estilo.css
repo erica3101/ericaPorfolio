@@ -1014,7 +1014,7 @@ body.modal-abierto {
     flex-direction: column;
 }
 
-.modal-descripcion-container p {
+.modal-descripcion-container p{
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -1038,7 +1038,7 @@ body.modal-abierto {
 }
 
 /* Botones dentro del modal */
-.modal-descripcion-container .btn {
+.modal-descripcion-container .btn  {
     display: inline-block;
     width: fit-content;
     margin-right: 15px;
@@ -1081,3 +1081,125 @@ body.modal-abierto {
 
 
 
+/* ======================================= */
+/* === ESTILOS PARA LA SECCIÓN CONTACTO (Formulario) === */
+/* ======================================= */
+
+#contacto {
+    /* Fondo que ya tienes en tu HTML, pero aseguramos el padding y centrado */
+    padding: 6rem 5%; /* Ya definido en .seccion, pero reaseguramos */
+    background-color: var(--light-bg-color); /* Usamos tu variable */
+    text-align: center;
+}
+
+.contacto-contenido {
+    max-width: 550px; /* Limita el ancho del formulario para mejor lectura */
+    margin: 0 auto; /* Centra el bloque de formulario */
+}
+
+.intro-contacto {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+/* --- Grupos de Campo (Label + Input) --- */
+.grupo-form {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.grupo-form label {
+    display: block;
+    font-weight: 600; /* Coherente con otros textos importantes */
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-size: 1em;
+}
+.intro-contacto {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+/* --- Inputs y Textareas (Estilo plano y limpio) --- */
+.grupo-form input[type="text"],
+.grupo-form input[type="email"],
+.grupo-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-version); /* Borde suave */
+    border-radius: 8px;
+    background-color: white;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.grupo-form textarea {
+    resize: vertical; /* Permite solo redimensionar verticalmente */
+}
+
+.btn-cta {
+    /* ✨ Propiedades del Botón Principal */
+    display: inline-block;
+    background-color: var(--secondary-color); /* Fondo oscuro (igual que tu contacto/whatsapp) */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    
+    /* ✨ Propiedad clave: EL EFECTO INCLINADO */
+    transform: skew(-10deg);
+    
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.btn-cta:hover {
+    /* Mismo hover que usas en otros botones */
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+    /* Aplicar un pequeño movimiento extra además de la inclinación */
+    transform: skew(-10deg) translateY(-2px); 
+}
+/* Efecto de enfoque (Focus) */
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+    border-color: var(--primary-color); /* Usa tu color primario al enfocar */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 66, 60, 0.2); /* Sombra suave con color primario */
+}
+
+/* --- Mensajes de Validación --- */
+.error {
+    color: #dc3545; /* Rojo clásico para errores */
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 20px; /* Importante para evitar que la sección salte */
+}
+
+.exito {
+    color: var(--primary-color); /* Puedes usar el color primario para el éxito */
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/* --- Botón de Envío (CTA) --- */
+
+/* --- Responsive para Contacto --- */
+@media (max-width: 600px) {
+    /* El ajuste ya lo tienes en el bloque general de media queries,
+       pero si quieres un formulario más ancho, puedes quitar:
+    #contacto form { padding: 1rem; width: 95%; margin: 0 auto; }
+    */
+    .btn-cta {
+        /* En móvil, a veces es mejor eliminar el skew para mayor legibilidad */
+        transform: none; 
+        font-size: 1em;
+    }
+}
