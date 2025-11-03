@@ -230,9 +230,9 @@ const mostrarError = (mensajeError, idCampo) => {
 };
 
 function validarNombre() {
-    const input = document.getElementById('nombre');
+    const input = document.getElementById('firstname');
     const ok = input.value.trim().length >= 2;
-    mostrarError(ok ? '' : 'El nombre es obligatorio (mín. 2).', 'nombre');
+    mostrarError(ok ? '' : 'El nombre es obligatorio (mín. 2).', 'firstname');
     return ok;
 }
 
@@ -267,6 +267,6 @@ if (formularioUsuario) {
     formularioUsuario.addEventListener('submit', validarFormulario);
     
     // Opcional: Validar al perder el foco (blur) para feedback instantáneo
-    document.getElementById('nombre')?.addEventListener('blur', validarNombre);
+    document.getElementById('firstname')?.addEventListener('blur', validarNombre);
     document.getElementById('email')?.addEventListener('blur', validarEmail);
 }
