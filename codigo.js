@@ -53,7 +53,7 @@ const listaDeProyectos = [
         descripcionLarga: "Proyecto editorial, incluyendo el diseño de la portada, contraportada y maquetación de interiores, respetando una grilla modular y tipografía legible.",
         imagenURL: "imagenes/revista.webp",
         linkSitio: "#",
-        linkBehance: "https://behance.net/tu_proyecto_revista",
+        linkBehance: "https://www.behance.net/gallery/237824697/Portada-de-revista",
         tecnologias: ["Adobe InDesign", "Adobe Photoshop", "Maquetación"],
         claseCSS: ""
     },
@@ -75,7 +75,7 @@ const listaDeProyectos = [
         descripcionLarga: "Diseño de un afiche promocional para un festival de música uruguaya. Se buscó un estilo visual que capturara la esencia del evento, utilizando técnicas de composición y tipografía.",
         imagenURL: "imagenes/afiche.webp",
         linkSitio: "#",
-        linkBehance: "https://behance.net/tu_proyecto_afiche",
+        linkBehance: "https://www.behance.net/gallery/237825007/Afiche",
         tecnologias: ["Adobe Illustrator", "Tipografía", "Composición"],
         claseCSS: ""
     },
@@ -97,7 +97,7 @@ const listaDeProyectos = [
         descripcionLarga: "Ilustración y diseño de la tapa de un libro de cómics y videojuegos.",
         imagenURL: "imagenes/comic.webp",
         linkSitio: "#",
-        linkBehance: "https://behance.net/tu_proyecto_comic",
+        linkBehance: "https://www.behance.net/gallery/237824363/Libro-de-comics",
         tecnologias: ["Adobe Photoshop", "Ilustración Digital", "Diseño Editorial"],
         claseCSS: ""
     },
