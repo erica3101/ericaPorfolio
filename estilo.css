@@ -1031,15 +1031,16 @@ body.modal-abierto {
     color: var(--dark-bg-color);
   
 }
-.modal-links{
-       background-color: var(--secondary-version);
+.modal-links {
+    background-color: var(--secondary-version);
     color: var(--dark-bg-color);
-    padding: 1px 1px 1px 1px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-
-
+    width: 80%;          /* ancho relativo al contenedor */
+    max-width: 500px;    /* ancho máximo */
+    padding: 20px;       /* espacio interno */
+    margin: 0 auto;      /* centra el modal horizontalmente */
+    border-radius: 10px; /* opcional: bordes redondeados */
 }
+
 /* Botones dentro del modal */
 .modal-descripcion-container .btn  {
     display: inline-block;
