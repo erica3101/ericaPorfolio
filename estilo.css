@@ -1037,6 +1037,8 @@ body.modal-abierto {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.9rem;
+        margin-bottom: 10px;
+
 
 }
 /* Botones dentro del modal */
