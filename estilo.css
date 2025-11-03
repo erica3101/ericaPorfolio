@@ -618,29 +618,6 @@ br {
     font-size: 1.2em; /* Iconos un poco más grandes */
 }
 
-/* Ajuste para dispositivos móviles */
-@media (max-width: 600px) {
-    #redes-seccion {
-        padding: 2rem 1.5rem;
-    }
-
-    #redes-seccion h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .redes-iconos a {
-        font-size: 1rem;
-        padding: 0.7rem 1.2rem;
-        gap: 6px;
-        transform: none; /* Eliminar inclinación en móviles si se prefiere un diseño más limpio */
-    }
-
-    .redes-iconos a:hover {
-        transform: none; /* También para el hover en móvil */
-    }
-}
-
 
 /* ======================================= */
 /* === ESTILOS PARA EL FOOTER (VERSIÓN ALINEADA A LA IZQUIERDA) === */
@@ -719,212 +696,6 @@ br {
 text-align: center;
 display: block;
 }
-
-
-/* --- Media Query para Footer (Tablet Vertical) --- */
-@media (max-width: 768px) {
-    .footer-contenido-alineado {
-        flex-direction: column; /* Apilamos en vertical */
-        gap: 1.5rem;
-    }
-
-    .footer-col-info {
-        flex-direction: column; /* Apilamos enlaces y redes */
-        gap: 1rem;
-    }
-
-    .footer-nav-compacto {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-
-/* ======================================= */
-/* === MEDIA QUERIES PARA RESPONSIVE GENERAL === */
-/* (Máx. 1024px para ajustes de tablet, Máx. 600px para ajustes de móvil) */
-/* ======================================= */
-
-/* --- Ajustes para Tablet (1024px) --- */
-@media (max-width: 1024px) {
-    /* 1. SECCIÓN SOBRE MÍ (Reduce el GAP y Padding) */
-    #sobremi,
-    #detalle-sobremi {
-        gap: 3rem; /* Reduce la separación lateral */
-        padding-inline: 2rem; /* Reduce el padding lateral */
-    }
-
-    /* 2. PROYECTOS (Ajusta la cuadrícula de 3 columnas a 2) */
-    .proyecto-contenedor-grid {
-        grid-template-columns: repeat(2, 1fr); /* Pasa de 3 a 2 columnas */
-        gap: 15px; /* Reduce el espacio entre tarjetas */
-        margin: 2rem auto;
-    }
-
-    /* La tarjeta 2x2 debe adaptarse a la nueva cuadrícula (2 columnas) */
-    .proyecto-card.span-2x2 {
-        grid-column: span 2; /* Sigue ocupando todo el ancho */
-        grid-row: span 1; /* Ocupa solo 1 fila (para evitar una altura excesiva) */
-    }
-}
-
-/* --- AJUSTES PARA MÓVILES (600px) --- */
-@media (max-width: 600px) {
-    /* --- General --- */
-    .seccion {
-        padding: 4rem 1rem; /* Reduce el padding general de las secciones */
-    }
-
-    h2.section-title {
-        font-size: 1.5rem;
-        text-align: center; /* Centra el título de las secciones */
-    }
-
-    /* 1. 🧭 NAV BAR MEJORADA: Diseño Compacto */
-    #navbar {
-        flex-direction: column; /* Apila el logo y los enlaces */
-        padding: 1rem 1rem;
-    }
-
-    .logo {
-        margin-bottom: 1rem; /* Separa el logo de los enlaces */
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links {
-        flex-direction: row; /* Volvemos a fila */
-        flex-wrap: wrap; /* Permitimos que los enlaces salten de línea */
-        justify-content: center; /* Centramos los enlaces */
-        width: 100%;
-        gap: 0.8rem !important; /* Espaciado cómodo entre enlaces */
-        padding-top: 0;
-    }
-
-    nav .nav-links a {
-        font-size: 0.9rem; /* Reducimos la fuente */
-        padding: 0.5rem 0.8rem; /* Añadimos padding para mejor toque */
-    }
-
-    /* Eliminar la animación de hover en móvil */
-    nav .nav-links a:after {
-        content: none;
-    }
-
-    /* 2. SECCIÓN SOBRE MÍ */
-    #sobremi {
-        flex-direction: column; /* Apila imagen y texto */
-        min-height: auto;
-        padding-inline: 1rem;
-        gap: 2rem;
-    }
-
-    .hero-img img {
-        max-height: 300px;
-    }
-
-    .sec-content {
-        align-items: center; /* Centra el texto y el botón */
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    /* Centrar el botón "Conóceme" */
-    #sobremi ul.contacto {
-        width: 100%;
-        text-align: center;
-    }
-
-    #sobremi a {
-        transform: none; /* Elimina el skew */
-    }
-
-    /* 3. SLIDER DE HERRAMIENTAS */
-
-    /* 4. PROYECTOS (Grid a una sola columna) */
-    .proyecto-contenedor-grid {
-        grid-template-columns: 1fr; /* Una sola columna para todos */
-        gap: 15px;
-    }
-
-    /* La tarjeta 2x2 se comporta como una tarjeta normal */
-    .proyecto-card.span-2x2 {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    /* Ajuste de imagen en la tarjeta 2x2 para que no sea excesivamente alta */
-    .proyecto-card.span-2x2 img {
-        height: auto;
-        max-height: 250px;
-    }
-
-    /* 7. 🖼️ IMÁGENES DE PROYECTOS SIEMPRE A COLOR EN MÓVIL */
-    .proyecto-card img {
-        filter: grayscale(0%) !important;
-        /* Anula el grayscale para que siempre se vean a color */
-    }
-
-    /* Ajuste del padding para el bloque de texto del proyecto para que no quede pegado */
-    .proyecto-card .proyecto-info {
-        padding: 10px;
-    }
-
-    /* 5. SECCIÓN CONTACTO */
-    #contacto form {
-        padding: 1rem;
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    #footer-compacto {
-        padding: 1rem 0 1rem 0;
-    }
-
-    .footer-contenido-alineado {
-        flex-direction: center;
-        gap: 1.5rem; /* Separación entre Logo y Redes */
-        padding: 0 1rem 1rem 1rem;
-       
-    }
-
-    .footer-col-info {
-        
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .footer-redes-compacto {
-        
-        gap: 1.5rem; /* Más espacio entre iconos */
-    }
-
-    .footer-copy-compacto p {
-        margin-top: 0.5rem;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ======================================= */
@@ -1063,30 +834,6 @@ body.modal-abierto {
     color: white;
 }
 
-/* Media Query para Móviles: Modal en una columna */
-@media (max-width: 768px) {
-    .modal-cuerpo {
-        flex-direction: column;
-    }
-
-    .modal-cuerpo img {
-        max-width: 100%;
-    }
-
-    .modal-contenido h3 {
-        font-size: 1.8rem;
-    }
-}
-
-
-
-
-
-
-
-
-
-
 
 /* ======================================= */
 /* === ESTILOS PARA LA SECCIÓN CONTACTO (Formulario) === */
@@ -1196,24 +943,6 @@ body.modal-abierto {
     font-weight: 600;
 }
 
-/* --- Botón de Envío (CTA) --- */
-
-/* --- Responsive para Contacto --- */
-@media (max-width: 600px) {
-    /* El ajuste ya lo tienes en el bloque general de media queries,
-       pero si quieres un formulario más ancho, puedes quitar:
-    #contacto form { padding: 1rem; width: 95%; margin: 0 auto; }
-    */
-    .btn-cta {
-        /* En móvil, a veces es mejor eliminar el skew para mayor legibilidad */
-        transform: none; 
-        font-size: 1em;
-    }
-}
-
-
-
-
 
 /* ===== Página /porque/ ===== */
 
@@ -1288,4 +1017,320 @@ body.modal-abierto {
 .img-encuesta:hover {
   transform: scale(1.03);
   opacity: 0.9;
+}
+
+
+/* === MEDIA QUERIES UNIFICADAS (Tablet y Móvil) === */
+
+
+/* --- AJUSTES PARA TABLET (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* 1. TIPOGRAFÍA Y ESPACIADO GENERAL */
+    .seccion {
+        padding: 5rem 3%; 
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1.15rem;
+    }
+
+    /* 2. SECCIÓN SOBRE MÍ */
+    #sobremi,
+    #detalle-sobremi {
+        min-height: auto; /* Permite que el contenido determine la altura */
+        gap: 3rem; 
+        padding-inline: 2rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+    
+    .hero-img img {
+        max-height: 350px;
+    }
+    
+    /* 3. PROYECTOS (Grid de 3 a 2 columnas) */
+    .proyecto-contenedor-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; 
+        margin: 2rem auto;
+    }
+
+    /* Ajuste de la tarjeta 2x2 para la cuadrícula de 2 columnas */
+    .proyecto-card.span-2x2 {
+        grid-column: span 2; 
+        grid-row: span 1; /* Ocupa solo 1 fila para no ser demasiado alto */
+    }
+    
+    /* 4. HABILIDADES DETALLADAS */
+    .habilidades-lista-simple-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    /* 5. FOOTER (Alineación vertical) */
+    .footer-contenido-alineado {
+        flex-direction: column; 
+        gap: 1.5rem;
+    }
+
+    .footer-col-info {
+        flex-direction: column; 
+        gap: 1rem;
+    }
+
+    .footer-nav-compacto {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* --- General y Tipografía --- */
+    .seccion {
+        padding: 4rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        text-align: center; 
+    }
+
+    p {
+        font-size: 1rem;
+    }
+    
+    /* --- 🧭 NAV BAR --- */
+    #navbar {
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem; 
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 0.8rem !important; 
+    }
+
+    nav .nav-links a {
+        font-size: 0.9rem; 
+        padding: 0.5rem 0.8rem; 
+    }
+
+    nav .nav-links a:after {
+        content: none;
+    }
+    
+    .modal-imagen {
+        display: none; 
+    }
+
+    /* --- 2. SECCIÓN SOBRE MÍ Y BOTONES PRINCIPALES (Armonizados) --- */
+    #sobremi, #detalle-sobremi {
+        flex-direction: column; 
+        padding-inline: 1rem;
+        gap: 2rem;
+    }
+
+    .hero-img {
+        order: -1;
+    }
+
+    .hero-img img {
+        max-height: 250px;
+    }
+
+    .sec-content {
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    /* 🌟 CORRECCIÓN CLAVE: Botón "Conóceme" 🌟 */
+    #sobremi .contacto a, /* Nuevo selector específico para el botón "Conóceme" */
+    #detalle-sobremi a {
+        transform: none; /* ELIMINA EL SKEW */
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        /* Asegura que herede estilos de botón si los tiene */
+        display: block; 
+    }
+    
+    /* Contenedor del botón "Conóceme" */
+    #sobremi .contacto {
+        width: 100%; /* Permite centrar el botón */
+        display: flex;
+        justify-content: center;
+        list-style: none; /* Eliminar cualquier estilo de lista por si acaso */
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Contenedores de botones secundarios (si existen) */
+    .enlaces-contacto-sobremi {
+        flex-direction: column; 
+        width: 80%;
+        max-width: 300px;
+        gap: 0.8rem;
+    }
+
+    .enlaces-contacto-sobremi a {
+        width: 100%;
+        justify-content: center;
+        transform: none;
+        font-size: 0.95rem;
+    }
+    
+    .redes-sociales-intro {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    /* --- 3. PROYECTOS (Grid a una sola columna y color) --- */
+    .proyecto-contenedor-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .proyecto-card.span-2x2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .proyecto-card.span-2x2 img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .proyecto-card img {
+        filter: grayscale(0%) !important;
+    }
+
+    /* --- 4. HABILIDADES DETALLADAS --- */
+    .habilidades-lista-simple-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .bloque-titulo {
+        font-size: 1.2rem;
+    }
+
+
+    /* --- 6. MODAL (Corregido para Armonía de Botones) --- */
+    .modal-contenido {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .cerrar-modal {
+        font-size: 30px;
+        top: 5px;
+        right: 15px;
+    }
+    
+    .modal-contenido h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .modal-cuerpo {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .modal-cuerpo img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .modal-links {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: flex-start; 
+        gap: 10px; 
+        background-color: transparent; 
+        padding: 0; 
+        width: 100%; 
+        max-width: none;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .modal-links .btn {
+        width: auto;
+        display: inline-flex; 
+        justify-content: center;
+        margin-right: 0; 
+        transform: none;
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .modal-descripcion-container p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    #modal-tecnologias {
+        margin-bottom: 15px;
+    }
+
+    /* --- 7. SECCIÓN CONTACTO (Formulario) --- */
+    .btn-cta {
+        width: 100%; 
+        transform: none;
+        margin-top: 15px;
+    }
+    
+    /* --- 8. FOOTER COMPACTO --- */
+    #footer-compacto {
+        padding: 1rem 0 1rem 0;
+    }
+
+    .footer-contenido-alineado {
+        flex-direction: column;
+        gap: 1rem; 
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .footer-col-info {
+        flex-direction: row; 
+        gap: 1.5rem;
+    }
+    
+    .footer-nav-compacto {
+        display: none;
+    }
+    
+    .footer-redes-compacto {
+        gap: 15px;
+    }
+    
+    /* --- 9. Página /porque/ --- */
+    .galeria-encuesta {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem;
+    }
+    
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    .titulo-porque {
+        font-size: 1.5rem;
+    }
 }

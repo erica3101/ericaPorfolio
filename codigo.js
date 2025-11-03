@@ -353,6 +353,11 @@ document.addEventListener("DOMContentLoaded", () => {
     modalImg.alt = img.alt;
   }
 
+
+/*  
+        } */
+
+
   // Abrir el modal al hacer click en cualquier imagen
   imagenes.forEach(img => {
     img.addEventListener("click", () => abrirModal(img));
@@ -372,3 +377,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.style.display = "none";
   });
 });
+
+
