@@ -119,29 +119,33 @@
         <h2>Contacto</h2>
         <p class="intro-contacto">contactame para más información</p>
         
-        <form id="form-usuario" name="contact" method="POST" data-netlify="true" action="success.html">
-            <input type="hidden" name="form-name" value="contact"/> 
+       <form id="form-usuario" name="contact" method="POST" 
+    data-netlify="true" 
+    action="success.html"
+    netlify-webhook="https://api.hsforms.com/submissions/v3/integration/submit/50661466/5d2b5044-9c53-4bc4-9241-8a1c435d7671"> 
 
-            <div class="grupo-form">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-                <p id="error-nombre" class="error"></p>
-            </div>
+    <input type="hidden" name="form-name" value="contact"/> 
 
-            <div class="grupo-form">
-                <label for="email">E-mail:</label>
-                <input type="email" id="error-email" name="email" placeholder="tu@email.com" required />
-                <div id="error-email" class="error"></div>
-            </div>
+    <div class="grupo-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="firstname" placeholder="Tu nombre" required /> 
+        <p id="error-nombre" class="error"></p>
+    </div>
 
-            <div class="grupo-form">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
-            </div>
+    <div class="grupo-form">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+        <div id="error-email" class="error"></div>
+    </div>
 
-            <div id="mensaje-exito" class="exito"></div>
-            <button type="submit" class="btn-cta">Enviar</button>
-        </form>
+    <div class="grupo-form">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="message" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+    </div>
+
+    <div id="mensaje-exito" class="exito"></div>
+    <button type="submit" class="btn-cta">Enviar</button>
+</form>
         
     </div>
 </div>
